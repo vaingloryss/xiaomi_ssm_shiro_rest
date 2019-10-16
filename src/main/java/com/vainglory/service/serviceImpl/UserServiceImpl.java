@@ -34,6 +34,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void register(User user) {
         System.out.println("UserServiceImpl日志：register...");
+        //开发时，flag默认为1，省去激活步骤
         user.setFlag(1);
         user.setCode(CodeUtils.getCode());
         user.setSalt(UUID.randomUUID().toString());
@@ -41,7 +42,9 @@ public class UserServiceImpl implements IUserService {
         user.setPassword(sha256Hash.toBase64());
         userMapper.add(user);
         EmailUtils.sendEmail(user);
-        roleMapper.add(user.getId(),3);
+        System.out.println(user.getId());
+        //为新注册的用户添加角色：1：管理员，2，用户
+        roleMapper.add(user.getId(),2);
     }
 
     @Override

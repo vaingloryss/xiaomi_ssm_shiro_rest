@@ -12,6 +12,9 @@
     <insert id="add" parameterType="user">
         insert into tb_user(id,username,password,email,gender,flag,salt,code)
         values (null,#{username},#{password},#{email},#{gender},#{flag},#{salt},#{code})
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            select LAST_INSERT_ID()
+        </selectKey>
     </insert>
 
     <select id="findByFlag" resultType="user">
