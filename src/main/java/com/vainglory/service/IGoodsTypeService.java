@@ -10,8 +10,4 @@ import java.util.List;
  */
 public interface IGoodsTypeService {
     List<GoodsType> getHeaderGoodsType();
-    GoodsType findById(Integer id);
-
-    List<GoodsType> findAll();
-
 }

@@ -16,7 +16,7 @@
 	<script type="text/javascript">
 		function pNum(goodsId,p,no){
 			$.ajax({
-				url:"${pageContext.request.contextPath}/cartController/addCart?goodsId="+goodsId+"&number=1",
+				url:"${pageContext.request.contextPath}/cartController/addCart/"+goodsId+"/1",
 				method:"get",
 				success:function(){
 					location.href = "${pageContext.request.contextPath}/cartController/showCart";
@@ -38,7 +38,7 @@
 				}
 			}
 			$.ajax({
-				url:"${pageContext.request.contextPath}/cartController/addCart?goodsId="+goodsId+"&number="+num,
+				url:"${pageContext.request.contextPath}/cartController/addCart/"+goodsId+"/"+num,
 				method:"get",
 				success:function(){
 					location.href = "${pageContext.request.contextPath}/cartController/showCart";
@@ -51,7 +51,7 @@
 		function deleteCart(pid){
 			if(confirm("确认要删除吗")){
 				$.ajax({
-					url:"${pageContext.request.contextPath}/cartController/addCart?goodsId="+pid+"&number=0",
+					url:"${pageContext.request.contextPath}/cartController/addCart/"+pid+"/0",
 					method:"get",
 					success:function(){
 						location.href = "${pageContext.request.contextPath}/cartController/showCart";

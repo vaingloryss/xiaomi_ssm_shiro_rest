@@ -17,15 +17,6 @@
         </selectKey>
     </insert>
 
-    <select id="findByFlag" resultType="user">
-        <include refid="selectUser"/>
-        where flag = #{flag}
-    </select>
-
-    <update id="deleteUser">
-        update tb_user set flag = 2 where id = #{id}
-    </update>
-
     <sql id="selectUser">
         select id,username,password,email,gender,flag,salt,code from tb_user
     </sql>

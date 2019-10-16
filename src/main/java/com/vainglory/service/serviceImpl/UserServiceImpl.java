@@ -48,16 +48,6 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<User> getUserList(Integer flag) {
-        return userMapper.findByFlag(flag);
-    }
-
-    @Override
-    public void deleteUser(Integer id) {
-        userMapper.deleteUser(id);
-    }
-
-    @Override
     public User queryUserByUsername(String username) {
         return userMapper.findByUserName(username);
     }

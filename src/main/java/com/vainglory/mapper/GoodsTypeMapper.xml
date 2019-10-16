@@ -9,15 +9,6 @@
         where level=1 limit 0,4
     </select>
 
-    <select id="findById" resultType="goodsType">
-        <include refid="selectGoodsType"/>
-        where id = #{id}
-    </select>
-
-    <select id="findAll" resultType="goodsType">
-        <include refid="selectGoodsType"/>
-    </select>
-
     <sql id="selectGoodsType">
         select id,name,level,parent from tb_goods_type
     </sql>

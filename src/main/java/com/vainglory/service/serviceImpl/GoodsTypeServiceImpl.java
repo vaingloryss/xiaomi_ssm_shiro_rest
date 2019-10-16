@@ -25,13 +25,4 @@ public class GoodsTypeServiceImpl implements IGoodsTypeService {
         return goodsTypeMapper.findByLevel();
     }
 
-    @Override
-    public GoodsType findById(Integer id) {
-        return goodsTypeMapper.findById(id);
-    }
-
-    @Override
-    public List<GoodsType> findAll() {
-        return goodsTypeMapper.findAll();
-    }
 }

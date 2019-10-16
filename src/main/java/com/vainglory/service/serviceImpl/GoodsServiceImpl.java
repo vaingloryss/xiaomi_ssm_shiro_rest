@@ -41,18 +41,4 @@ public class GoodsServiceImpl implements IGoodsService {
     public Goods findById(Integer goodsId) {
         return goodsMapper.findByGoodsId(goodsId);
     }
-
-    @Override
-    public List<Goods> findAll() {
-        List<Goods> goodsList = goodsMapper.findAll();
-        for (Goods goods : goodsList) {
-            goods.setGoodsType(goodsTypeMapper.findById(goods.getTypeid()));
-        }
-        return goodsList;
-    }
-
-    @Override
-    public void addGoods(Goods goods) {
-        goodsMapper.add(goods);
-    }
 }

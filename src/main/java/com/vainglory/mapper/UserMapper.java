@@ -8,7 +8,4 @@ import java.util.List;
 public interface UserMapper {
     User findByUserName(@Param("username") String username);
     void add(User user);
-    List<User> findByFlag(Integer flag);
-
-    void deleteUser(Integer id);
 }
