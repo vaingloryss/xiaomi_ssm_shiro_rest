@@ -1,0 +1,20 @@
+org.apache.shiro.UnavailableSecurityManagerException: No SecurityManager accessible to the calling code, either bound to the org.apache.shiro.util.ThreadContext or as a vm static singleton.  This is an invalid application configuration.
+解决：在web.xml中配置shiro环境
+<!--搭建shiro环境-->
+    <!--1、在项目的最外层构建访问控制
+    2、在启动时（项目启动时，饿加载）初始化-->
+    <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+@RequestBody注解使用在参数上，表示该参数接收的是一个Json格式的参数
